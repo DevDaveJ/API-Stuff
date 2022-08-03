@@ -87,7 +87,7 @@ namespace APIClientApp
 
             var outwardRequest = new RestRequest("https://api.postcodes.io/", Method.Get);
             var outCode = "EC2Y";
-            restRequest.Resource = $"outcodes/{outCode.ToLower().Replace(" ", "")}";
+            restRequest.Resource = $"outcodes/{outCode.Trim()}";
         }
     }
 }
