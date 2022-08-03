@@ -84,6 +84,10 @@ namespace APIClientApp
 
             var selectedAdminCounty = bulkPostcodeObjectRepsone.result.Where(q => q.query == "PR3 0SG").FirstOrDefault().result.codes.admin_county;
             Console.WriteLine(selectedAdminCounty);
+
+            var outwardRequest = new RestRequest("https://api.postcodes.io/", Method.Get);
+            var outCode = "EC2Y";
+            restRequest.Resource = $"outcodes/{outCode.ToLower().Replace(" ", "")}";
         }
     }
 }
