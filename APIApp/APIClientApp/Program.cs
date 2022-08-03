@@ -55,7 +55,7 @@ namespace APIClientApp
             //var status = singlePostcodeJsonResponse["status"];
 
 
-            var client = new RestClient();
+/*            var client = new RestClient();
             var request = new RestRequest("https://api.postcodes.io/postcodes/", Method.Post);
             request.AddHeader("Content-Type", "application/json");
 
@@ -84,6 +84,8 @@ namespace APIClientApp
 
             var selectedAdminCounty = bulkPostcodeObjectRepsone.result.Where(q => q.query == "PR3 0SG").FirstOrDefault().result.codes.admin_county;
             Console.WriteLine(selectedAdminCounty);
+*/
+
             /////
             ///
             var outCode = "EC2Y";
@@ -95,6 +97,10 @@ namespace APIClientApp
             RestResponse outResponse = await outClient.ExecuteAsync(outRequest);
             var outcodesJsonResponse = JObject.Parse(outResponse.Content);
 
+            Console.WriteLine("outcodesJsonResponse: ", outcodesJsonResponse);
+
+
+//            var outcodeObjectRepsone = JsonConvert.DeserializeObject<OutwardResponse>(outResponse.Content);
 
         }
     }

@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace APIClientApp
 {
 
-    public class OutwardRoot
+    public class OutwardResponse
     {
         public int status { get; set; }
-        public Result result { get; set; }
+        public OutwardResult result { get; set; }
     }
 
     public class OutwardResult
